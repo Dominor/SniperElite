@@ -27,8 +27,8 @@ public class ArmouredEnemy extends Enemy {
     @Override
     public String getMessage () {
         if (armour == 0) {
-            return "NOOO. My armour is gone. PLEASE don't kill me. \n" + super.getMessage();
+            return "\n NOOO. My armour is gone. PLEASE don't kill me. \n" + super.getMessage() + "\n";
         }
-        return super.getMessage() + "HAHA. Now you shall never kill me. I have armour the most amazing in the whole Universe, not even Galactus himself can kill me. (" + armour + " left).";
+        return "\n" + super.getMessage() + "HAHA. Now you shall never kill me. I have armour the most amazing in the whole Universe, not even Galactus himself can kill me. (" + armour + " left). \n";
     }
 }

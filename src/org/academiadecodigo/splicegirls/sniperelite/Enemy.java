@@ -29,8 +29,8 @@ public class Enemy extends GameObject {
     @Override
     public String getMessage() {
         if (isDead) {
-            return "One coin for Charon please. Ease my crossing!";
+            return "\n One coin for Charon please. Ease my crossing! \n";
         }
-        return "I am immortal. You shall never kill me. " + health + " points left.";
+        return "\n I am immortal. You shall never kill me. " + health + " points left. \n";
     }
 }

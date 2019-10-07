@@ -17,7 +17,7 @@ public class Game {
         for (GameObject gameObject: gameObjects) {
 
             if (gameObject instanceof Enemy) {
-                System.out.println("Beginning exterminations of HUMAAANSS");
+                System.out.println("\n Beginning exterminations of HUMAAANSS \n");
                 Enemy enemy = (Enemy) gameObject;
 
                 while(!enemy.isDead()) {
@@ -28,7 +28,9 @@ public class Game {
 
                 continue;
             }
-            gameObject.getMessage();
+
+            // Only reachable if gameObject is a Tree.
+            System.out.println(gameObject.getMessage());
         }
         System.out.println("Everyone is dead. Skynet is coming... " + shotsFired + " shots fired.");
     }
@@ -40,17 +42,16 @@ public class Game {
 
         for (int i = 0; i < gameObjects.length; i++) {
 
-            creationChance = Randomizer.getRandom(10, 1);
+            creationChance = Randomizer.getRandom(11, 1);
 
-            if (creationChance > 7) {
+            if (creationChance < 8.5) {
                 gameObjects[i] = new Tree();
                 continue;
             }
-            if (creationChance > 3) {
+            if (creationChance < 7) {
                 gameObjects[i] = new SoldierEnemy();
                 continue;
             }
-
                 gameObjects[i] = new ArmouredEnemy();
         }
         return gameObjects;
