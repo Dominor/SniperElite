@@ -1,4 +1,7 @@
-package org.academiadecodigo.splicegirls.sniperelite;
+package org.academiadecodigo.splicegirls.sniperelite.game;
+
+import org.academiadecodigo.splicegirls.sniperelite.Randomizer;
+import org.academiadecodigo.splicegirls.sniperelite.gameobjects.*;
 
 public class Game {
 

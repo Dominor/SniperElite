@@ -1,4 +1,4 @@
-package org.academiadecodigo.splicegirls.sniperelite;
+package org.academiadecodigo.splicegirls.sniperelite.gameobjects;
 
 public abstract class GameObject {
 

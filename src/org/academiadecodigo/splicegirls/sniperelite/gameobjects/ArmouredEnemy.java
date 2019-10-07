@@ -1,4 +1,4 @@
-package org.academiadecodigo.splicegirls.sniperelite;
+package org.academiadecodigo.splicegirls.sniperelite.gameobjects;
 
 public class ArmouredEnemy extends Enemy {
     private int armour;
