@@ -1,6 +1,6 @@
-package org.academiadecodigo.splicegirls.sniperelite.gameobjects;
+package org.academiadecodigo.splicegirls.sniperelite.gameobject.decor;
 
-import org.academiadecodigo.splicegirls.sniperelite.gameobjects.GameObject;
+import org.academiadecodigo.splicegirls.sniperelite.gameobject.GameObject;
 
 public class Tree extends GameObject {
 

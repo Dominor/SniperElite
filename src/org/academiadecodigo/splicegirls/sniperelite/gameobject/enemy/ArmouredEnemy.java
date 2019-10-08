@@ -1,11 +1,11 @@
-package org.academiadecodigo.splicegirls.sniperelite.gameobjects;
+package org.academiadecodigo.splicegirls.sniperelite.gameobject.enemy;
 
 public class ArmouredEnemy extends Enemy {
     private int armour;
 
-    public ArmouredEnemy () {
-        super();
-        this.armour = 100;
+    public ArmouredEnemy (int health, int armour) {
+        super(health);
+        this.armour = armour;
     }
 
     @Override
