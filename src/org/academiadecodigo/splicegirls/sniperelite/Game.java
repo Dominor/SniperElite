@@ -6,12 +6,13 @@ import org.academiadecodigo.splicegirls.sniperelite.gameobject.decor.Tree;
 import org.academiadecodigo.splicegirls.sniperelite.gameobject.enemy.ArmouredEnemy;
 import org.academiadecodigo.splicegirls.sniperelite.gameobject.enemy.Enemy;
 import org.academiadecodigo.splicegirls.sniperelite.gameobject.enemy.SoldierEnemy;
+import org.academiadecodigo.splicegirls.sniperelite.gameobject.stuff.Barrel;
 import org.academiadecodigo.splicegirls.sniperelite.gameobject.weapons.SniperRifle;
 
 public class Game {
 
-    private static final double ENEMY_PROBABILITY = 0.7;
-    private static final int BULLET_DAMAGE = 1;
+    public static final double ENEMY_PROBABILITY = 0.6;
+    public static final int BULLET_DAMAGE = 1;
 
     private GameObject[] gameObjects;
     private SniperRifle sniperRifle;
@@ -25,11 +26,11 @@ public class Game {
 
         for (GameObject gameObject: gameObjects) {
 
-            if (gameObject instanceof Enemy) {
-                System.out.println("\n Beginning exterminations of HUMAAANSS \n");
-                Enemy target = (Enemy) gameObject;
+            if (gameObject instanceof Destroyable) {
+                System.out.println("\n Beginning exterminations of HUMAAANSS and ... NON-HUMANS?! To be or not to be ...? \n");
+                Destroyable target = (Destroyable) gameObject;
 
-                while(!target.isDead()) {
+                while(!target.isDestroyed()) {
                     sniperRifle.shoot(target);
                     System.out.println(gameObject.getMessage());
                 }
@@ -40,7 +41,7 @@ public class Game {
             // Only reachable if gameObject is a Tree.
             System.out.println(gameObject.getMessage());
         }
-        System.out.println("Everyone is dead. Skynet is coming... " + sniperRifle.getShotsFired() + " shots fired.");
+        System.out.println("Everyone is dead. Skynet is coming (Or not) (To be or not to be?)... " + sniperRifle.getShotsFired() + " shots fired.");
     }
 
     public GameObject[] createObjects (int numberObjects) {
@@ -49,7 +50,7 @@ public class Game {
 
         for (int i = 0; i < gameObjects.length; i++) {
 
-            gameObjects[i] = Math.random() < ENEMY_PROBABILITY ? GameObjectFactory.createEnemy() : new Tree();
+            gameObjects[i] = Math.random() < ENEMY_PROBABILITY ? GameObjectFactory.createEnemy() : GameObjectFactory.createNonEnemies();
         }
         return gameObjects;
     }

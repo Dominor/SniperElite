@@ -1,6 +1,7 @@
 package org.academiadecodigo.splicegirls.sniperelite.gameobject.weapons;
 
 import org.academiadecodigo.splicegirls.sniperelite.Randomizer;
+import org.academiadecodigo.splicegirls.sniperelite.gameobject.Destroyable;
 import org.academiadecodigo.splicegirls.sniperelite.gameobject.enemy.Enemy;
 
 public class SniperRifle  {
@@ -14,11 +15,11 @@ public class SniperRifle  {
         this.shotsFired = 0;
     }
 
-    public void shoot (Enemy enemy) {
+    public void shoot (Destroyable target) {
 
+        shotsFired++;
         if (Math.random() < HIT_PROBABILITY) {
-            enemy.hit(this.bulletDamage);
-            shotsFired++;
+            target.hit(this.bulletDamage);
             return;
         }
         System.out.println("I missed. Damn Zeus!");

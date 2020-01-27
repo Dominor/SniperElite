@@ -1,8 +1,8 @@
 package org.academiadecodigo.splicegirls.sniperelite.gameobject.enemy;
 
-import org.academiadecodigo.splicegirls.sniperelite.gameobject.GameObject;
+import org.academiadecodigo.splicegirls.sniperelite.gameobject.*;
 
-public class Enemy extends GameObject {
+public class Enemy extends GameObject implements Destroyable {
 
     private int health;
 
@@ -20,6 +20,10 @@ public class Enemy extends GameObject {
             return;
         }
         health -= damage;
+    }
+
+    public boolean isDestroyed () {
+        return health == 0;
     }
 
     @Override

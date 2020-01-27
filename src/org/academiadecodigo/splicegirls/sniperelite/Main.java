@@ -3,7 +3,7 @@ package org.academiadecodigo.splicegirls.sniperelite;
 public class Main {
 
     public static void main(String[] args) {
-        Game game = new Game(10);
+        Game game = new Game(3);
 
         game.start();
     }
